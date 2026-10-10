@@ -1,0 +1,1800 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Portfolio Galuh Azri Fauzan</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #071426;
+      color: white;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ================= NAVBAR ================= */
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 70px;
+      background: rgba(4, 15, 30, 0.95);
+      backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 7%;
+      z-index: 999;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .logo img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-menu a {
+      color: #dbeafe;
+      font-size: 14px;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu a.active {
+      color: #38bdf8;
+    }
+
+    .contact-btn {
+      padding: 9px 16px;
+      border-radius: 20px;
+      background: #2563eb;
+      color: white !important;
+    }
+
+    .contact-btn:hover {
+      background: #38bdf8;
+      color: #071426 !important;
+    }
+
+    /* ================= GENERAL ================= */
+
+    section {
+      min-height: 100vh;
+      padding: 100px 7% 70px;
+      scroll-margin-top: 70px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title span {
+      font-size: 35px;
+    }
+
+    .section-title h2 {
+      font-size: 35px;
+      margin: 5px 0;
+    }
+
+    .section-title p {
+      color: #94a3b8;
+    }
+
+    /* ================= HOME ================= */
+
+    #home {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(
+          circle at 80% 30%,
+          rgba(37,99,235,0.25),
+          transparent 35%
+        ),
+        linear-gradient(135deg, #06101f, #0b1d38);
+    }
+
+    .home-container {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 50px;
+    }
+
+    .home-text {
+      flex: 1;
+    }
+
+    .welcome {
+      color: #38bdf8;
+      font-weight: bold;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
+
+    .home-text h1 {
+      font-size: 48px;
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+
+    .home-text h1 span {
+      color: #38bdf8;
+    }
+
+    .home-text h3 {
+      color: #cbd5e1;
+      margin-bottom: 15px;
+    }
+
+    .home-text p {
+      color: #94a3b8;
+      max-width: 650px;
+      margin-bottom: 25px;
+    }
+
+    .home-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 25px;
+      background: #2563eb;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 14px;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      background: #38bdf8;
+      color: #06101f;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid #38bdf8;
+      color: #38bdf8;
+    }
+
+    .btn-outline:hover {
+      background: #38bdf8;
+      color: #06101f;
+    }
+
+    .home-photo {
+      flex: 0 0 330px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .home-photo img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid #38bdf8;
+      box-shadow: 0 0 40px rgba(56,189,248,0.25);
+    }
+
+    /* ================= ABOUT ================= */
+
+    #about {
+      background: #091a30;
+    }
+
+    .about-container {
+      max-width: 900px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .about-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 25px;
+      border-radius: 18px;
+      transition: 0.3s;
+    }
+
+    .about-card:hover {
+      transform: translateY(-5px);
+      border-color: #38bdf8;
+    }
+
+    .about-card h3 {
+      color: #38bdf8;
+      margin-bottom: 8px;
+    }
+
+    .about-card p {
+      color: #cbd5e1;
+    }
+
+    /* ================= SCHOOL ================= */
+
+    #school {
+      background: #071426;
+    }
+
+    .school-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .school-card {
+      background: rgba(255,255,255,0.06);
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: 0.3s;
+    }
+
+    .school-card:hover {
+      transform: translateY(-8px);
+      border-color: #38bdf8;
+    }
+
+    .school-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .school-content {
+      padding: 20px;
+    }
+
+    .school-content h3 {
+      color: #38bdf8;
+      margin-bottom: 5px;
+    }
+
+    .school-content p {
+      color: #94a3b8;
+    }
+
+    /* ================= SKILLS ================= */
+
+    #skills {
+      background: #091a30;
+    }
+
+    .skills-container {
+      max-width: 900px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .skill-card {
+      padding: 25px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: 0.3s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+      border-color: #38bdf8;
+    }
+
+    .skill-card h3 {
+      color: #38bdf8;
+      margin-bottom: 8px;
+    }
+
+    .skill-card p {
+      color: #94a3b8;
+    }
+
+    /* ================= HOBI ================= */
+
+    #hobi {
+      background: #071426;
+    }
+
+    .hobi-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .hobi-card {
+      background: rgba(255,255,255,0.06);
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.1);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .hobi-card:hover {
+      transform: translateY(-8px);
+      border-color: #38bdf8;
+    }
+
+    .hobi-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hobi-content {
+      padding: 18px;
+      text-align: center;
+    }
+
+    .hobi-content h3 {
+      color: #38bdf8;
+      margin-bottom: 5px;
+    }
+
+    .hobi-content p {
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
+    /* ================= PRESTASI ================= */
+
+    #prestasi {
+      background: #091a30;
+    }
+
+    .prestasi-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      max-width: 950px;
+      margin: auto;
+      align-items: start;
+    }
+
+    .prestasi-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .prestasi-card:hover {
+      transform: translateY(-8px);
+      border-color: #38bdf8;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .prestasi-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .prestasi-content {
+      padding: 22px;
+    }
+
+    .prestasi-icon {
+      font-size: 35px;
+      margin-bottom: 5px;
+    }
+
+    .prestasi-content h3 {
+      color: #38bdf8;
+      font-size: 25px;
+      margin-bottom: 15px;
+    }
+
+    /* ================= DAFTAR PRESTASI ================= */
+
+    .daftar-prestasi {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .daftar-prestasi li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 14px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      margin: 0;
+      transition: 0.3s;
+    }
+
+    .daftar-prestasi li:hover {
+      background: rgba(56,189,248,0.08);
+      border-color: #38bdf8;
+      transform: translateX(5px);
+    }
+
+    .medali {
+      font-size: 27px;
+      min-width: 35px;
+      text-align: center;
+    }
+
+    .daftar-prestasi strong {
+      display: block;
+      color: #38bdf8;
+      font-size: 16px;
+      margin-bottom: 2px;
+    }
+
+    .daftar-prestasi p {
+      color: #cbd5e1;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    /* ================= CONTACT ================= */
+
+    #contact {
+      background: #071426;
+    }
+
+    .contact-container {
+      max-width: 900px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .contact-card {
+      display: block;
+      padding: 25px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 18px;
+      transition: 0.3s;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+      border-color: #38bdf8;
+    }
+
+    .contact-card h3 {
+      color: #38bdf8;
+      margin-bottom: 5px;
+    }
+
+    .contact-card p {
+      color: #94a3b8;
+      word-break: break-word;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #040c18;
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
+    /* ================= POPUP HOBI ================= */
+
+    .popup-hobi {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.75);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 2000;
+    }
+
+    .popup-hobi.show {
+      display: flex;
+    }
+
+    .popup-box {
+      width: 100%;
+      max-width: 500px;
+      background: #0b1d38;
+      border: 1px solid #38bdf8;
+      border-radius: 20px;
+      padding: 30px;
+      position: relative;
+      text-align: center;
+      animation: popup 0.25s ease;
+    }
+
+    @keyframes popup {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .popup-box h2 {
+      color: #38bdf8;
+      margin-bottom: 15px;
+    }
+
+    .popup-box p {
+      color: #cbd5e1;
+    }
+
+    .close-popup {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    /* ================= BACK TO TOP ================= */
+
+    #backTop {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 45px;
+      height: 45px;
+      border: none;
+      border-radius: 50%;
+      background: #2563eb;
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+      display: none;
+      z-index: 1000;
+    }
+
+    #backTop.show {
+      display: block;
+    }
+
+    /* ================= ANIMATION ================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media (max-width: 900px) {
+
+      nav {
+        padding: 0 4%;
+      }
+
+      .nav-menu {
+        gap: 12px;
+      }
+
+      .nav-menu a {
+        font-size: 12px;
+      }
+
+      .home-container {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+
+      .home-buttons {
+        justify-content: center;
+      }
+
+      .home-photo {
+        flex: auto;
+      }
+
+      .school-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hobi-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 700px) {
+
+      nav {
+        height: auto;
+        min-height: 65px;
+        padding: 10px 4%;
+      }
+
+      .logo {
+        font-size: 16px;
+      }
+
+      .logo img {
+        width: 35px;
+        height: 35px;
+      }
+
+      .nav-menu {
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .nav-menu a {
+        font-size: 10px;
+      }
+
+      .contact-btn {
+        padding: 6px 10px !important;
+      }
+
+      section {
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+
+      .home-text h1 {
+        font-size: 35px;
+      }
+
+      .home-photo img {
+        width: 220px;
+        height: 220px;
+      }
+
+      .about-container,
+      .skills-container,
+      .contact-container,
+      .prestasi-container {
+        grid-template-columns: 1fr;
+      }
+
+      .school-container {
+        grid-template-columns: 1fr;
+      }
+
+      .hobi-container {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title h2 {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+
+  <nav>
+
+    <a href="#home" class="logo">
+
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRceYWFh34FVPSEDfwhQ3PqxZSHYq3MtBEzW9juqmqLz2jWlG1YMh-sUA42&s=10"
+        alt="Logo">
+
+      <span>Galuh Portfolio</span>
+
+    </a>
+
+    <ul class="nav-menu">
+
+      <li>
+        <a href="#home" class="nav-link active">
+          Home
+        </a>
+      </li>
+
+      <li>
+        <a href="#about" class="nav-link">
+          Tentang Saya
+        </a>
+      </li>
+
+      <li>
+        <a href="#school" class="nav-link">
+          Sekolah
+        </a>
+      </li>
+
+      <li>
+        <a href="#skills" class="nav-link">
+          Skills
+        </a>
+      </li>
+
+      <li>
+        <a href="#hobi" class="nav-link">
+          Hobi
+        </a>
+      </li>
+
+      <li>
+        <a href="#prestasi" class="nav-link">
+          Prestasi
+        </a>
+      </li>
+
+      <li>
+        <a href="#contact" class="nav-link contact-btn">
+          Contact
+        </a>
+      </li>
+
+    </ul>
+
+  </nav>
+
+
+  <!-- ================= HOME ================= -->
+
+  <section id="home" class="reveal active">
+
+    <div class="home-container">
+
+      <div class="home-text">
+
+        <div class="welcome">
+          WELCOME TO MY PORTFOLIO 👋
+        </div>
+
+        <h1>
+          Halo, Saya
+          <span>Galuh Azri Fauzan</span>
+        </h1>
+
+        <h3>
+          XI RPL 2 | Student & Beginner Developer
+        </h3>
+
+        <p>
+          Saya adalah siswa SMK yang sedang belajar di bidang
+          Rekayasa Perangkat Lunak (RPL). Saya tertarik dengan
+          dunia pemrograman, website, aplikasi, dan teknologi.
+        </p>
+
+        <div class="home-buttons">
+
+          <button class="btn" id="btnTentang">
+            Tentang Saya
+          </button>
+
+          <button class="btn btn-outline" id="btnSkills">
+            Lihat Skills
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <div class="home-photo">
+
+        <img
+          src="azri.jpg"
+          alt="Foto Galuh Azri Fauzan">
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= ABOUT ================= -->
+
+  <section id="about" class="section reveal">
+
+    <div class="section-title">
+
+      <span>👤</span>
+
+      <h2>Tentang Saya</h2>
+
+      <p>
+        Mengenal saya lebih dekat
+      </p>
+
+    </div>
+
+
+    <div class="about-container">
+
+      <div class="about-card">
+        <h3>Nama</h3>
+        <p>Galuh Azri Fauzan Budiawan</p>
+      </div>
+
+      <div class="about-card">
+        <h3>Kelas</h3>
+        <p>XI RPL 2</p>
+      </div>
+
+      <div class="about-card">
+        <h3>Jurusan</h3>
+        <p>Rekayasa Perangkat Lunak (RPL)</p>
+      </div>
+
+      <div class="about-card">
+        <h3>Sekolah</h3>
+        <p>SMKN 1 Kota Banjar</p>
+      </div>
+
+      <div class="about-card">
+        <h3>Status</h3>
+        <p>Student & Beginner Developer</p>
+      </div>
+
+      <div class="about-card">
+        <h3>Minat</h3>
+        <p>Website, Aplikasi, Teknologi & Pemrograman</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= SCHOOL ================= -->
+
+  <section id="school" class="section reveal">
+
+    <div class="section-title">
+
+      <span>🏫</span>
+
+      <h2>Sekolah</h2>
+
+      <p>
+        Riwayat pendidikan saya
+      </p>
+
+    </div>
+
+
+    <div class="school-container">
+
+      <div class="school-card">
+
+        <img
+          src="4.jpg"
+          alt="Sekolah Dasar">
+
+        <div class="school-content">
+
+          <h3>SD Negeri 1 Mekarharja</h3>
+
+          <p>
+            Sekolah Dasar
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="school-card">
+
+        <img
+          src="Kawan Gallery-24.jpg"
+          alt="Sekolah Menengah Pertama?">
+
+        <div class="school-content">
+
+          <h3>MtsN 3 Kota Banjar</h3>
+
+          <p>
+            Sekolah Menengah Pertama
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="school-card">
+
+        <img
+          src="smkn1banjar.jpg"
+          alt="SMKN 1 Kota Banjar">
+
+        <div class="school-content">
+
+          <h3>SMKN 1 Kota Banjar</h3>
+
+          <p>
+            Jurusan Rekayasa Perangkat Lunak
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= SKILLS ================= -->
+
+  <section id="skills" class="section reveal">
+
+    <div class="section-title">
+
+      <span>💻</span>
+
+      <h2>Skills</h2>
+
+      <p>
+        Beberapa kemampuan yang sedang saya pelajari
+      </p>
+
+    </div>
+
+
+    <div class="skills-container">
+
+      <div class="skill-card">
+
+        <h3>🌐 HTML</h3>
+
+        <p>
+          Membuat struktur dan tampilan dasar sebuah website
+          menggunakan HTML.
+        </p>
+
+      </div>
+
+
+      <div class="skill-card">
+
+        <h3>🎨 CSS</h3>
+
+        <p>
+          Mengatur warna, layout, ukuran, animasi dan tampilan
+          website agar lebih menarik.
+        </p>
+
+      </div>
+
+
+      <div class="skill-card">
+
+        <h3>⚡ JavaScript</h3>
+
+        <p>
+          Membuat website menjadi lebih interaktif dengan
+          JavaScript.
+        </p>
+
+      </div>
+
+
+      <div class="skill-card">
+
+        <h3>📱 Mobile Development</h3>
+
+        <p>
+          Mempelajari pembuatan aplikasi mobile dan konsep
+          pengembangan aplikasi.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= HOBI ================= -->
+
+  <section id="hobi" class="section reveal">
+
+    <div class="section-title">
+
+      <span>🔥</span>
+
+      <h2>Hobi</h2>
+
+      <p>
+        Beberapa kegiatan yang saya sukai
+      </p>
+
+    </div>
+
+
+    <div class="hobi-container">
+
+      <div
+        class="hobi-card"
+        data-title="Modifikasi Motor"
+        data-description="Saya suka memodifikasi motor, terutama mempelajari bagian mesin, CVT, performa dan tampilan motor.">
+
+        <img
+          src="mio.jpg"
+          alt="Modifikasi Motor">
+
+        <div class="hobi-content">
+
+          <h3>🏍️ Modif Motor</h3>
+
+          <p>
+            Ngeresing & otomotif
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="hobi-card"
+        data-title="Bermain Bola"
+        data-description="Bermain sepak bola menjadi salah satu kegiatan yang saya sukai bersama teman-teman.">
+
+        <img
+          src="hobi-bola.jpg"
+          alt="Bermain Bola">
+
+        <div class="hobi-content">
+
+          <h3>⚽ Bermain Bola</h3>
+
+          <p>
+            Olahraga & teamwork
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="hobi-card"
+        data-title="Lari"
+        data-description="Saya juga suka berlari sebagai salah satu kegiatan olahraga dan menjaga kebugaran.">
+
+        <img
+          src="hobi-lari.jpg"
+          alt="Lari">
+
+        <div class="hobi-content">
+
+          <h3>🏃 Lari</h3>
+
+          <p>
+            Olahraga & kebugaran
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="hobi-card"
+        data-title="Bermain Game"
+        data-description="Bermain game menjadi salah satu hiburan ketika sedang memiliki waktu luang.">
+
+        <img
+          src="hobi-game.jpg"
+          alt="Bermain Game">
+
+        <div class="hobi-content">
+
+          <h3>🎮 Bermain Game</h3>
+
+          <p>
+            Hiburan & strategi
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= PRESTASI ================= -->
+
+  <section id="prestasi" class="section reveal">
+
+    <div class="section-title">
+
+      <span>🏆</span>
+
+      <h2>Prestasi</h2>
+
+      <p>
+        Beberapa pencapaian yang pernah diraih
+      </p>
+
+    </div>
+
+
+    <div class="prestasi-container">
+
+
+      <!-- ================= PMR ================= -->
+
+      <div class="prestasi-card">
+
+        <img
+          src="prestasi1.jpg"
+          alt="Prestasi PMR">
+
+        <div class="prestasi-content">
+
+          <div class="prestasi-icon">
+            🩸
+          </div>
+
+          <h3>PMR</h3>
+
+          <ul class="daftar-prestasi">
+
+            <li>
+
+              <span class="medali">
+                🥈
+              </span>
+
+              <div>
+
+                <strong>Juara 2</strong>
+
+                <p>
+                  Favorit Anjangsana
+                </p>
+
+              </div>
+
+            </li>
+
+
+            <li>
+
+              <span class="medali">
+                🏅
+              </span>
+
+              <div>
+
+                <strong>Juara Harapan 2</strong>
+
+                <p>
+                  Terbaik Travelling ke Palang
+                </p>
+
+              </div>
+
+            </li>
+
+
+            <li>
+
+              <span class="medali">
+                🥉
+              </span>
+
+              <div>
+
+                <strong>Juara 3</strong>
+
+                <p>
+                  Terbaik
+                </p>
+
+              </div>
+
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+
+      <!-- ================= SEPAK BOLA ================= -->
+
+      <div class="prestasi-card">
+
+        <img
+          src="prestasi2.jpg"
+          alt="Prestasi Sepak Bola">
+
+        <div class="prestasi-content">
+
+          <div class="prestasi-icon">
+            ⚽
+          </div>
+
+          <h3>Sepak Bola</h3>
+
+          <ul class="daftar-prestasi">
+
+            <li>
+
+              <span class="medali">
+                🥇
+              </span>
+
+              <div>
+
+                <strong>Juara 1</strong>
+
+                <p>
+                  Sixfeo Akademi Persib
+                </p>
+
+              </div>
+
+            </li>
+
+
+            <li>
+
+              <span class="medali">
+                🥈
+              </span>
+
+              <div>
+
+                <strong>Juara 2</strong>
+
+                <p>
+                  Latihan Bersama Mekarharja
+                </p>
+
+              </div>
+
+            </li>
+
+
+            <li>
+
+              <span class="medali">
+                🥇
+              </span>
+
+              <div>
+
+                <strong>Juara 1</strong>
+
+                <p>
+                  Forfeo Ekadaya Cup
+                </p>
+
+              </div>
+
+            </li>
+
+
+            <li>
+
+              <span class="medali">
+                🥇
+              </span>
+
+              <div>
+
+                <strong>Juara 1</strong>
+
+                <p>
+                  Liga Antar RW / Desa
+                </p>
+
+              </div>
+
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= CONTACT ================= -->
+
+  <section id="contact" class="section reveal">
+
+    <div class="section-title">
+
+      <span>📱</span>
+
+      <h2>Contact</h2>
+
+      <p>
+        Temukan saya melalui media sosial
+      </p>
+
+    </div>
+
+
+    <div class="contact-container">
+
+      <a
+        class="contact-card"
+        href="https://www.instagram.com/galuhhazriifb/"
+        target="_blank"
+        rel="noopener">
+
+        <h3>
+          📸 Instagram
+        </h3>
+
+        <p>
+          @galuhhazriifb
+        </p>
+
+      </a>
+
+
+      <a
+        class="contact-card"
+        href="https://wa.me/6287764096990"
+        target="_blank"
+        rel="noopener">
+
+        <h3>
+          💬 WhatsApp
+        </h3>
+
+        <p>
+          Chat melalui WhatsApp
+        </p>
+
+      </a>
+
+
+      <a
+        class="contact-card"
+        href="https://www.tiktok.com/@galuhhazriiifb_"
+        target="_blank"
+        rel="noopener">
+
+        <h3>
+          🎵 TikTok
+        </h3>
+
+        <p>
+          @galuhhazriiifb_
+        </p>
+
+      </a>
+
+
+      <a
+        class="contact-card"
+        href="https://mail.google.com/mail/?view=cm&fs=1&to=galuhazri6@gmail.com"
+        target="_blank"
+        rel="noopener">
+
+        <h3>
+          📧 Gmail
+        </h3>
+
+        <p>
+          galuhazri6@gmail.com
+        </p>
+
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    <p>
+      © 2026 Galuh Azri Fauzan Budiawan.
+      All Rights Reserved.
+    </p>
+
+  </footer>
+
+
+  <!-- ================= POPUP HOBI ================= -->
+
+  <div
+    id="popupHobi"
+    class="popup-hobi"
+    aria-hidden="true">
+
+    <div class="popup-box">
+
+      <button
+        class="close-popup"
+        id="closePopup"
+        aria-label="Tutup">
+
+        ×
+
+      </button>
+
+      <div
+        id="popupIcon"
+        style="font-size:40px;">
+
+        ⭐
+
+      </div>
+
+      <h2 id="popupTitle">
+        Hobi
+      </h2>
+
+      <p id="popupIsi">
+        Deskripsi hobi
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- ================= BACK TO TOP ================= -->
+
+  <button
+    id="backTop"
+    aria-label="Kembali ke atas">
+
+    ↑
+
+  </button>
+
+
+  <!-- ================= JAVASCRIPT ================= -->
+
+  <script>
+
+    /* ================= NAVIGASI ================= */
+
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    navLinks.forEach(function(link) {
+
+      link.addEventListener("click", function() {
+
+        navLinks.forEach(function(item) {
+
+          item.classList.remove("active");
+
+        });
+
+        link.classList.add("active");
+
+      });
+
+    });
+
+
+    /* ================= TOMBOL TENTANG ================= */
+
+    const btnTentang =
+      document.getElementById("btnTentang");
+
+    btnTentang.addEventListener("click", function() {
+
+      document.getElementById("about").scrollIntoView({
+        behavior: "smooth"
+      });
+
+    });
+
+
+    /* ================= TOMBOL SKILLS ================= */
+
+    const btnSkills =
+      document.getElementById("btnSkills");
+
+    btnSkills.addEventListener("click", function() {
+
+      document.getElementById("skills").scrollIntoView({
+        behavior: "smooth"
+      });
+
+    });
+
+
+    /* ================= BACK TO TOP ================= */
+
+    const backTop =
+      document.getElementById("backTop");
+
+    window.addEventListener("scroll", function() {
+
+      if (window.scrollY > 400) {
+
+        backTop.classList.add("show");
+
+      } else {
+
+        backTop.classList.remove("show");
+
+      }
+
+    });
+
+
+    backTop.addEventListener("click", function() {
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+    });
+
+
+    /* ================= ACTIVE NAV SAAT SCROLL ================= */
+
+    const sections =
+      document.querySelectorAll("section");
+
+    window.addEventListener("scroll", function() {
+
+      let currentSection = "";
+
+      sections.forEach(function(section) {
+
+        const sectionTop =
+          section.offsetTop - 150;
+
+        const sectionHeight =
+          section.offsetHeight;
+
+        if (
+          window.scrollY >= sectionTop &&
+          window.scrollY < sectionTop + sectionHeight
+        ) {
+
+          currentSection =
+            section.getAttribute("id");
+
+        }
+
+      });
+
+
+      navLinks.forEach(function(link) {
+
+        link.classList.remove("active");
+
+        const target =
+          link.getAttribute("href");
+
+        if (
+          target === "#" + currentSection
+        ) {
+
+          link.classList.add("active");
+
+        }
+
+      });
+
+    });
+
+
+    /* ================= ANIMASI SCROLL ================= */
+
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
+    const observer =
+      new IntersectionObserver(
+        function(entries) {
+
+          entries.forEach(function(entry) {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add("active");
+
+            }
+
+          });
+
+        },
+        {
+          threshold: 0.12
+        }
+      );
+
+
+    revealElements.forEach(function(element) {
+
+      observer.observe(element);
+
+    });
+
+
+    /* ================= POPUP HOBI ================= */
+
+    const popupHobi =
+      document.getElementById("popupHobi");
+
+    const popupTitle =
+      document.getElementById("popupTitle");
+
+    const popupIsi =
+      document.getElementById("popupIsi");
+
+    const closePopup =
+      document.getElementById("closePopup");
+
+    const hobiCards =
+      document.querySelectorAll(".hobi-card");
+
+
+    hobiCards.forEach(function(card) {
+
+      card.addEventListener("click", function() {
+
+        const judul =
+          card.getAttribute("data-title") || "Hobi";
+
+        const isi =
+          card.getAttribute("data-description") || "";
+
+        popupTitle.textContent = judul;
+
+        popupIsi.textContent = isi;
+
+        popupHobi.classList.add("show");
+
+        popupHobi.setAttribute(
+          "aria-hidden",
+          "false"
+        );
+
+      });
+
+    });
+
+
+    /* ================= TUTUP POPUP ================= */
+
+    closePopup.addEventListener("click", function() {
+
+      popupHobi.classList.remove("show");
+
+      popupHobi.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+    });
+
+
+    /* ================= KLIK LUAR POPUP ================= */
+
+    popupHobi.addEventListener("click", function(e) {
+
+      if (e.target === popupHobi) {
+
+        popupHobi.classList.remove("show");
+
+        popupHobi.setAttribute(
+          "aria-hidden",
+          "true"
+        );
+
+      }
+
+    });
+
+
+    /* ================= TOMBOL ESC ================= */
+
+    document.addEventListener("keydown", function(e) {
+
+      if (e.key === "Escape") {
+
+        popupHobi.classList.remove("show");
+
+        popupHobi.setAttribute(
+          "aria-hidden",
+          "true"
+        );
+
+      }
+
+    });
+
+
+    /* ================= CONSOLE ================= */
+
+    console.log(
+      "Portfolio Galuh Azri Fauzan berhasil dimuat."
+    );
+
+  </script>
+
+</body>
+</html>
